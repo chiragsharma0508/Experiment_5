@@ -1,0 +1,32 @@
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ echo "first commit" >> README.md
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git init
+      Initialized empty Git repository in /home/web3/Chirag_Sharma/Experiment_5/.git/
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git add .
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git commit -m "first"
+      [master (root-commit) db048cc] first
+       1 file changed, 1 insertion(+)
+       create mode 100644 README.md
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git checkout -b feature
+      Switched to a new branch 'feature'
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ echo "branch commit" >> README.md
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git add .
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git commit -m "second"
+      [feature fe76930] second
+       1 file changed, 1 insertion(+)
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git checkout master
+      Switched to branch 'master'
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ echo "master commit" >> Master.txt
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git add .
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git commit -m "third"
+      [master ccb07ee] third
+       1 file changed, 1 insertion(+)
+       create mode 100644 Master.txt
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git checkout feature
+      Switched to branch 'feature'
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git rebase master
+      First, rewinding head to replay your work on top of it...
+      Applying: second
+(base) web3@web3-VirtualBox:~/Chirag_Sharma/Experiment_5$ git log --oneline --graph --all
+      * d4f5341 (HEAD -> feature) second
+      * ccb07ee (master) third
+      * db048cc first
